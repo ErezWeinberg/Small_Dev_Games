@@ -11,6 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
@@ -20,20 +21,21 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
 }
 
 .score-board {
-    position: absolute;
-    top: 20px;
     width: 100%;
     display: flex;
     justify-content: space-around;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.2);
     pointer-events: none;
-    z-index: 0;
+    margin-bottom: 10px;
 }
 
 #player-score {
@@ -52,12 +54,16 @@ canvas {
     border-radius: 10px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0,0,0,0.5);
     z-index: 1;
+    max-width: 95%;
+    max-height: 70vh;
+    object-fit: contain;
 }
 
 .controls-hint {
     font-size: 0.9rem;
     color: #888;
     letter-spacing: 1px;
+    margin-top: 15px;
 }
 .controls-hint strong {
     color: #fff;
