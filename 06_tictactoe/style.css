@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f0f13;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.score-board {
+    display: flex;
+    gap: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.player-x {
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
+}
+
+.player-o {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.status {
+    font-size: 1.5rem;
+    height: 30px;
+    text-shadow: 0 0 5px #fff;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.cell {
+    background: linear-gradient(135deg, #1a1a24 0%, #0d0d12 100%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.cell:hover {
+    background: #2a2a3a;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.cell.x {
+    color: #00ffcc;
+    text-shadow: 0 0 15px #00ffcc;
+}
+
+.cell.o {
+    color: #ff00ff;
+    text-shadow: 0 0 15px #ff00ff;
+}
+
+button {
+    padding: 10px 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #0f0f13;
+    box-shadow: 0 0 15px #fff;
+}
