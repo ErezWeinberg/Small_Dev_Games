@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f0f13;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.score-board {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
+}
+
+.status {
+    font-size: 1rem;
+    height: 24px;
+    color: #ccc;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(9, 38px);
+    grid-template-rows: repeat(9, 38px);
+    gap: 4px;
+    background-color: #1a1a24;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.cell {
+    background: linear-gradient(135deg, #2a2a3a 0%, #1d1d26 100%);
+    border: 1px solid #3d3d52;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, box-shadow 0.15s;
+}
+
+.cell:hover:not(.revealed) {
+    background: #38384f;
+    box-shadow: 0 0 8px rgba(0, 255, 204, 0.4);
+}
+
+.cell.revealed {
+    background: #0d0d12;
+    border-color: #1f1f2b;
+    cursor: default;
+}
+
+.cell.mine {
+    background: #3a0d1e;
+    border-color: #ff0055;
+    box-shadow: 0 0 12px #ff0055;
+}
+
+.cell.flagged {
+    color: #ffaa00;
+    text-shadow: 0 0 10px #ffaa00;
+}
+
+.n1 { color: #00e5ff; text-shadow: 0 0 8px #00e5ff; }
+.n2 { color: #00ff66; text-shadow: 0 0 8px #00ff66; }
+.n3 { color: #ff0055; text-shadow: 0 0 8px #ff0055; }
+.n4 { color: #aa00ff; text-shadow: 0 0 8px #aa00ff; }
+.n5 { color: #ffaa00; text-shadow: 0 0 8px #ffaa00; }
+.n6 { color: #00ffcc; text-shadow: 0 0 8px #00ffcc; }
+.n7 { color: #ffffff; text-shadow: 0 0 8px #ffffff; }
+.n8 { color: #ff55ff; text-shadow: 0 0 8px #ff55ff; }
+
+button {
+    padding: 10px 22px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #0f0f13;
+    box-shadow: 0 0 15px #fff;
+}
