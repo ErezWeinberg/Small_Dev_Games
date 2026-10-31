@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f0f13;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.score-board {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
+}
+
+.status {
+    font-size: 1.2rem;
+    height: 30px;
+    text-shadow: 0 0 5px #fff;
+}
+
+.simon {
+    position: relative;
+    width: min(400px, 80vw, 60vh);
+    height: min(400px, 80vw, 60vh);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    padding: 12px;
+    background: #1a1a24;
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.pad {
+    cursor: pointer;
+    opacity: 0.35;
+    transition: opacity 0.1s, box-shadow 0.1s, transform 0.1s;
+}
+
+.pad.green  { background: #00ff66; border-top-left-radius: 100%; }
+.pad.red    { background: #ff0055; border-top-right-radius: 100%; }
+.pad.yellow { background: #ffee00; border-bottom-left-radius: 100%; }
+.pad.blue   { background: #00aaff; border-bottom-right-radius: 100%; }
+
+.pad.active {
+    opacity: 1;
+    transform: scale(0.98);
+}
+.pad.green.active  { box-shadow: 0 0 40px #00ff66; }
+.pad.red.active    { box-shadow: 0 0 40px #ff0055; }
+.pad.yellow.active { box-shadow: 0 0 40px #ffee00; }
+.pad.blue.active   { box-shadow: 0 0 40px #00aaff; }
+
+.center-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32%;
+    height: 32%;
+    border-radius: 50%;
+    background: #0f0f13;
+    color: #fff;
+    border: 3px solid #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.center-btn:hover {
+    box-shadow: 0 0 20px #fff;
+}
+
+.center-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+    box-shadow: none;
+}
+
+.controls-hint {
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 1px;
+}
+.controls-hint strong {
+    color: #fff;
+}
